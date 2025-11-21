@@ -1,12 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hilware.dev</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAGE - Hilware.dev</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Hilware.dev</h1>
-    <p>Your SAGE Frontend is now online.</p>
+
+    <header>
+        <div class="container">
+            <h1>SAGE: System-Assisted Guided Engineering</h1>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <p class="description">
+                    SAGE is a comprehensive system of 82 specialized agents designed to guide engineering processes from planning to maintenance. 
+                    It orchestrates complex workflows, ensuring compliance, quality, and efficiency across the entire software development lifecycle.
+                    Explore the roster below to see the specialized roles within the SAGE ecosystem.
+                </p>
+                <button id="view-agents-btn" class="cta-button">View Agents</button>
+            </div>
+        </section>
+
+        <section id="agent-section" class="agent-section hidden">
+            <div class="container">
+                <div id="agent-grid" class="agent-grid">
+                    <!-- Agents will be inserted here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hilware.dev</p>
+        </div>
+    </footer>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
