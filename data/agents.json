@@ -5,7 +5,7 @@
     "domain": "Planning",
     "status": "Developing",
     "purpose": "Debug Purpose",
-    "prompt": "API Test Prompt"
+    "prompt": "API Test Prompt, This is a test that I wrote to test the API."
   },
   {
     "id": "A02",
