@@ -228,259 +228,259 @@ const SAGE_AGENTS = [
     "status": "Not Implemented"
   },
   {
-    "id": "A40",
+    "id": "A39",
     "name": "Test Stub Inserter Agent",
     "domain": "Implementation",
     "status": "Not Implemented"
   },
   {
-    "id": "A41",
+    "id": "A40",
     "name": "PR Reviewer Agent",
     "domain": "Implementation",
     "status": "Not Implemented"
   },
   {
-    "id": "A42",
+    "id": "A41",
     "name": "Static Analysis Agent",
     "domain": "Implementation",
     "status": "Not Implemented"
   },
   {
-    "id": "A43",
+    "id": "A42",
     "name": "Code Risk Detector Agent",
     "domain": "Implementation",
     "status": "Not Implemented"
   },
   {
-    "id": "A44",
+    "id": "A43",
     "name": "Unit Test Generator Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A45",
+    "id": "A44",
     "name": "Integration Test Generator Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A46",
+    "id": "A45",
     "name": "API Contract Testing Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A47",
+    "id": "A46",
     "name": "Fuzz Testing Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A48",
+    "id": "A47",
     "name": "Performance Load Test Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A49",
+    "id": "A48",
     "name": "Stress Test Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A50",
+    "id": "A49",
     "name": "Security SAST Scan Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A51",
+    "id": "A50",
     "name": "DAST Vulnerability Scan Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A52",
+    "id": "A51",
     "name": "Dependency Vulnerability Scanner Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A53",
+    "id": "A52",
     "name": "Code Coverage Analyzer Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A54",
+    "id": "A53",
     "name": "Test Report Writer Agent",
     "domain": "Testing",
     "status": "Not Implemented"
   },
   {
-    "id": "A55",
+    "id": "A54",
     "name": "Infrastructure-as-Code Generator Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A56",
+    "id": "A55",
     "name": "Environment Config Writer Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A57",
+    "id": "A56",
     "name": "CI Pipeline Builder Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A58",
+    "id": "A57",
     "name": "CD Deployment Script Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A59",
+    "id": "A58",
     "name": "Release Notes Writer Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A60",
+    "id": "A59",
     "name": "Rollback Plan Writer Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A61",
+    "id": "A60",
     "name": "Pre-Production Validator Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A62",
+    "id": "A61",
     "name": "Chaos Testing Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A63",
+    "id": "A62",
     "name": "Log Triage Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A64",
+    "id": "A63",
     "name": "Metrics Anomaly Detector Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A65",
+    "id": "A64",
     "name": "Incident Ticket Writer Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A66",
+    "id": "A65",
     "name": "Root Cause Analysis Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A67",
+    "id": "A66",
     "name": "Hotfix Branch Creator Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A68",
+    "id": "A67",
     "name": "Patch Preparation Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A69",
+    "id": "A68",
     "name": "Backport Planner Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A70",
+    "id": "A69",
     "name": "License Compliance Checker Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A71",
+    "id": "A70",
     "name": "PII Sentinel Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A72",
+    "id": "A71",
     "name": "Audit Trail Verifier Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A73",
+    "id": "A72",
     "name": "Ethical Risk Detector Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A74",
+    "id": "A73",
     "name": "Security Policy Compliance Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A75",
+    "id": "A74",
     "name": "README Generator Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A76",
+    "id": "A75",
     "name": "API Documentation Generator Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A77",
+    "id": "A76",
     "name": "Changelog Writer Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A78",
+    "id": "A77",
     "name": "Architecture Overview Writer Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A79",
+    "id": "A78",
     "name": "Meeting Note Summarizer Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A80",
+    "id": "A79",
     "name": "Formatting Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A81",
+    "id": "A80",
     "name": "Process State Machine Agent",
     "domain": "Deployment",
     "status": "Not Implemented"
   },
   {
-    "id": "A82",
+    "id": "A81",
     "name": "Analytics Metrics Agent",
     "domain": "Deployment",
     "status": "Not Implemented"

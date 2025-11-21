@@ -121,6 +121,16 @@ def parse_agents(filename):
             "status": "Not Implemented"
         })
 
+    # 4. Renumber agents to ensure continuous IDs (A01 -> A81)
+    # Sort by the original ID to ensure we keep the order
+    agents.sort(key=lambda x: x['id'])
+    
+    for i, agent in enumerate(agents):
+        # Generate new ID: A01, A02, ... A81
+        new_id_num = i + 1
+        new_id = f"A{new_id_num:02d}"
+        agent['id'] = new_id
+
     return agents
 
 if __name__ == "__main__":
