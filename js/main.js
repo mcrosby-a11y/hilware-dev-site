@@ -3,6 +3,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const agentSection = document.getElementById('agent-section');
     const agentGrid = document.getElementById('agent-grid');
 
+    // Check for file protocol
+    if (window.location.protocol === 'file:') {
+        const warning = document.createElement('div');
+        warning.style.cssText = 'background: #ff4444; color: white; padding: 20px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;';
+        warning.innerHTML = '<strong>WARNING:</strong> You are viewing this file directly. Functionality will be limited.<br>Run <code>python server.py</code> in your terminal and visit <a href="http://localhost:8000" style="color: white; text-decoration: underline;">http://localhost:8000</a>.';
+        document.body.prepend(warning);
+    }
+
     viewAgentsBtn.addEventListener('click', () => {
         // Reveal the section
         agentSection.classList.remove('hidden');

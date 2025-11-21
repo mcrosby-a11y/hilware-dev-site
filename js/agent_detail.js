@@ -2,6 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const params = new URLSearchParams(window.location.search);
     const agentId = params.get('id');
 
+    // Check for file protocol
+    if (window.location.protocol === 'file:') {
+        const warning = document.createElement('div');
+        warning.style.cssText = 'background: #ff4444; color: white; padding: 20px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 9999;';
+        warning.innerHTML = '<strong>WARNING:</strong> You are viewing this file directly. To save changes, you must run the server.<br>Run <code>python server.py</code> in your terminal and visit <a href="http://localhost:8000" style="color: white; text-decoration: underline;">http://localhost:8000</a>.';
+        document.body.prepend(warning);
+    }
+
     if (!agentId) {
         alert('No agent ID specified.');
         window.location.href = 'index.html';
@@ -71,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .catch(error => {
                 console.error('Error saving:', error);
-                alert('Error saving changes. Make sure server.py is running.');
+                alert(`Error saving changes: ${error.message}\n\nMake sure server.py is running and you are accessing via http://localhost:8000`);
             });
     });
 });
