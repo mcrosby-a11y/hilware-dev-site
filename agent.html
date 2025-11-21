@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agent Detail - SAGE</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Specific styles for the detail page */
+        .detail-container {
+            max-width: 800px;
+            margin: 40px auto;
+            background-color: var(--card-bg);
+            padding: 40px;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        input[type="text"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            background-color: #0a0a0a;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            color: var(--text-main);
+            font-family: var(--font-family);
+            font-size: 1rem;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        input:disabled {
+            background-color: #1a1a1a;
+            color: #666;
+            cursor: not-allowed;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .save-btn {
+            background-color: var(--accent-red);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s;
+        }
+
+        .save-btn:hover {
+            background-color: var(--accent-red-hover);
+        }
+
+        .cancel-btn {
+            background-color: transparent;
+            color: var(--text-muted);
+            border: 1px solid var(--border-color);
+            padding: 12px 30px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .cancel-btn:hover {
+            color: white;
+            border-color: white;
+        }
+
+        .header-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 20px;
+        }
+
+        .back-link {
+            color: var(--text-muted);
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <h1>SAGE Agent Detail</h1>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <a href="index.html" class="back-link">&larr; Back to Roster</a>
+
+            <div class="detail-container">
+                <div class="header-row">
+                    <h2 id="agent-name-display">Loading...</h2>
+                    <span id="agent-id-display" class="agent-id">...</span>
+                </div>
+
+                <form id="agent-form">
+                    <div class="form-group">
+                        <label for="domain">Domain Group</label>
+                        <input type="text" id="domain" disabled>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="purpose">Purpose / Description</label>
+                        <textarea id="purpose" placeholder="Enter the agent's purpose..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="prompt">System Prompt / Programming</label>
+                        <textarea id="prompt"
+                            placeholder="Enter the system prompt or programming instructions..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="status">Implementation Status</label>
+                        <select id="status">
+                            <option value="Not Implemented">Not Implemented</option>
+                            <option value="Developing">Developing</option>
+                            <option value="Implemented">Implemented</option>
+                        </select>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="submit" class="save-btn">Save Changes</button>
+                        <button type="button" class="cancel-btn"
+                            onclick="window.location.href='index.html'">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Hilware.dev</p>
+        </div>
+    </footer>
+
+    <script src="js/agent_detail.js"></script>
+</body>
+
+</html>

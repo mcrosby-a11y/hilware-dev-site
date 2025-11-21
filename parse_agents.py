@@ -131,17 +131,21 @@ def parse_agents(filename):
         new_id = f"A{new_id_num:02d}"
         agent['id'] = new_id
 
+    # Add empty fields for Phase 2
+    for agent in agents:
+        agent['purpose'] = ""
+        agent['prompt'] = ""
+
     return agents
 
 if __name__ == "__main__":
-    if not os.path.exists('js'):
-        os.makedirs('js')
+    if not os.path.exists('data'):
+        os.makedirs('data')
         
     agents = parse_agents('raw_text.txt')
     
-    # Write to JS file
-    js_content = f"const SAGE_AGENTS = {json.dumps(agents, indent=2)};"
-    with open('js/data.js', 'w', encoding='utf-8') as f:
-        f.write(js_content)
+    # Write to JSON file
+    with open('data/agents.json', 'w', encoding='utf-8') as f:
+        json.dump(agents, f, indent=2)
     
-    print(f"Extracted {len(agents)} agents.")
+    print(f"Extracted {len(agents)} agents to data/agents.json")

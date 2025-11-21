@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     viewAgentsBtn.addEventListener('click', () => {
         // Reveal the section
         agentSection.classList.remove('hidden');
-        
+
         // Scroll to the section
         agentSection.scrollIntoView({ behavior: 'smooth' });
 
@@ -17,34 +17,72 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function renderAgents() {
-        // SAGE_AGENTS is defined in js/data.js
-        if (typeof SAGE_AGENTS === 'undefined') {
-            console.error('SAGE_AGENTS data not found.');
-            agentGrid.innerHTML = '<p>Error loading agent data.</p>';
-            return;
-        }
+        fetch('data/agents.json')
+            .then(response => response.json())
+            .then(agents => {
+                // Group agents by domain
+                const agentsByDomain = {};
+                agents.forEach(agent => {
+                    if (!agentsByDomain[agent.domain]) {
+                        agentsByDomain[agent.domain] = [];
+                    }
+                    agentsByDomain[agent.domain].push(agent);
+                });
 
-        const fragment = document.createDocumentFragment();
+                // Clear grid
+                agentGrid.innerHTML = '';
 
-        SAGE_AGENTS.forEach(agent => {
-            const card = document.createElement('div');
-            card.className = 'agent-card';
+                // Render by domain
+                // Define a specific order if desired, otherwise use object keys (which might be insertion order)
+                // We'll stick to the order they appear in the JSON (which is roughly the order in the doc)
+                // But since we're iterating keys, let's rely on the extraction order which was sequential.
+                // To be safe, we can iterate the domains from the list of agents to maintain order.
 
-            card.innerHTML = `
-                <div class="agent-header">
-                    <span class="agent-id">${agent.id}</span>
-                    <span class="agent-domain">${agent.domain}</span>
-                </div>
-                <h3 class="agent-name">${agent.name}</h3>
-                <div class="agent-status">
-                    <span class="status-indicator"></span>
-                    ${agent.status}
-                </div>
-            `;
+                const domains = [];
+                agents.forEach(agent => {
+                    if (!domains.includes(agent.domain)) {
+                        domains.push(agent.domain);
+                    }
+                });
 
-            fragment.appendChild(card);
-        });
+                domains.forEach(domain => {
+                    // Create domain header
+                    const domainHeader = document.createElement('h2');
+                    domainHeader.className = 'domain-header';
+                    domainHeader.textContent = domain;
+                    agentGrid.appendChild(domainHeader);
 
-        agentGrid.appendChild(fragment);
+                    // Create grid for this domain
+                    const domainGrid = document.createElement('div');
+                    domainGrid.className = 'domain-grid';
+
+                    agentsByDomain[domain].forEach(agent => {
+                        const card = document.createElement('div');
+                        card.className = 'agent-card';
+                        // Make card clickable for Phase 2
+                        card.onclick = () => window.location.href = `agent.html?id=${agent.id}`;
+                        card.style.cursor = 'pointer';
+
+                        card.innerHTML = `
+                            <div class="agent-header">
+                                <span class="agent-id">${agent.id}</span>
+                                <span class="agent-domain">${agent.domain}</span>
+                            </div>
+                            <h3 class="agent-name">${agent.name}</h3>
+                            <div class="agent-status">
+                                <span class="status-indicator" data-status="${agent.status}"></span>
+                                ${agent.status}
+                            </div>
+                        `;
+                        domainGrid.appendChild(card);
+                    });
+
+                    agentGrid.appendChild(domainGrid);
+                });
+            })
+            .catch(error => {
+                console.error('Error loading agent data:', error);
+                agentGrid.innerHTML = '<p>Error loading agent data. Please ensure you are running this on a local server (e.g., python -m http.server).</p>';
+            });
     }
 });
