@@ -68,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const card = document.createElement('div');
                         card.className = 'agent-card';
                         // Make card clickable for Phase 2
-                        card.onclick = () => window.location.href = `agent.html?id=${agent.id}`;
+                        card.onclick = () => window.location.href = `agent/?id=${agent.id}`;
                         card.style.cursor = 'pointer';
 
                         card.innerHTML = `

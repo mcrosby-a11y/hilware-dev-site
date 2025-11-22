@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!agentId) {
         alert('No agent ID specified.');
-        window.location.href = 'index.html';
+        window.location.href = '../index.html';
         return;
     }
 
@@ -25,13 +25,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const statusInput = document.getElementById('status');
 
     // Load data
-    fetch('data/agents.json')
+    fetch('../data/agents.json')
         .then(response => response.json())
         .then(agents => {
             const agent = agents.find(a => a.id === agentId);
             if (!agent) {
                 alert('Agent not found.');
-                window.location.href = 'index.html';
+                window.location.href = '../index.html';
                 return;
             }
 
